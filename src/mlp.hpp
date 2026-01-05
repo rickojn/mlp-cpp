@@ -1,5 +1,9 @@
+#include <vector>
 struct Layer
 {
     virtual ~Layer() = default;
-    virtual void forward(const std::vector<float>& input, std::vector<float>& output) = 0;
+
+    std::vector<float> weights, biases, activations_input, activations_output,
+    gradients_weights, gradients_biases, gradients_input, gradients_output;
+
 };
